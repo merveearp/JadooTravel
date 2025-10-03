@@ -6,9 +6,9 @@ namespace JadooTravel.Controllers
 {
     public class DestinationController : Controller
     {
-        private readonly DestinationService _destinationService;
+        private readonly IDestinationService _destinationService;
 
-        public DestinationController(DestinationService destinationService)
+        public DestinationController(IDestinationService destinationService)
         {
             _destinationService = destinationService;
         }
@@ -52,7 +52,6 @@ namespace JadooTravel.Controllers
             await _destinationService.UpdateDestinationAsync(updateDestinationDto);
             return RedirectToAction("DestinationList");
         }
-
 
     }
 }

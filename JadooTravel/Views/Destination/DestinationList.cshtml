@@ -1,0 +1,50 @@
+﻿@model List<ResultDestinationDto>
+@{
+    Layout = "~/Views/Admin/Layout.cshtml";
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md- mb-4">
+            <div class="card h-100">
+                <img src="@item.ImageUrl"
+                     class="card-img-top @(item.Status ? "" : "grayscale")"
+                     alt="@item.CityCountry"
+                     style="object-fit:cover; height:200px;" />
+
+                <div class="card-body">
+                    <h5 class="card-title d-flex justify-content-between align-items-center">
+                        @item.CityCountry
+                        @if (item.Status)
+                        {
+                            <span class="badge bg-success">Aktif</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-secondary">Pasif</span>
+                        }
+                    </h5>
+                    <p class="card-text">
+                        <strong>Gün/Gece:</strong> @item.DayNight <br />
+                        <strong>Fiyat:</strong> @item.Price <br />
+                        <strong>Kapasite:</strong> @item.Capacity <br />
+                        <span>@item.Description</span>
+                    </p>
+                </div>
+                <div class="card-footer d-flex justify-content-between">
+                    <a href="/Destination/UpdateDestination/@item.DestinationId" class="btn btn-success btn-sm">Güncelle</a>
+                    <a href="/Destination/DeleteDestination/@item.DestinationId" class="btn btn-danger btn-sm">Sil</a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<a href="/Destination/CreateDestination" class="btn btn-info mt-3">Yeni Tur Oluştur</a>
+
+<style>
+    .grayscale {
+        filter: grayscale(100%);
+    }
+</style>

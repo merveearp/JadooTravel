@@ -14,6 +14,8 @@ namespace JadooTravel.Entities
         public string DayNight { get; set; }
         public int Capacity { get; set; }
         public string Description { get; set; }
-        
+        public bool Status { get; set; }
+
+
     }
 }

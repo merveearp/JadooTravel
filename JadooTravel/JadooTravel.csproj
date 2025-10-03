@@ -4,14 +4,27 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>c0334180-1df0-4184-a3bf-9c15493bd544</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="15.0.1" />
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="ISO3166" Version="1.0.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.18" />
     <PackageReference Include="MongoDB.Bson" Version="3.5.0" />
     <PackageReference Include="MongoDB.Driver" Version="3.5.0" />
     <PackageReference Include="MongoDB.Driver.Core" Version="2.30.0" />
+    <PackageReference Include="OpenAI" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Services\ReservationServices\" />
+    <Folder Include="Services\UserServices\" />
+    <Folder Include="Services\TripPlanServices\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="ViewComponents\Default\_DefaultAIViewComponentPartial.cs" />
   </ItemGroup>
 
 </Project>
